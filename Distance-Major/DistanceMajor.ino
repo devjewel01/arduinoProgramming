@@ -1,9 +1,10 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
 #define trigPin 12
 #define echoPin 8
 #define Buzzer 13
 
-#include <Wire.h>
-#include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x27,16,2);
 
 void setup ()

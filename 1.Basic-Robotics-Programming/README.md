@@ -3,7 +3,7 @@
 <br>
 
 **Blinking a LED**
-```arduino 
+```c
 void setup() 
 {
   pinMode(13, OUTPUT);
