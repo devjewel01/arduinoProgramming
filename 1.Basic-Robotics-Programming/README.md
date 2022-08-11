@@ -20,7 +20,7 @@ void loop()
 <br>
 
 **Blinking two LED**
-```arduino
+```cpp
 int led1 = 13;
 int led2 = 12;
 
@@ -44,7 +44,7 @@ void loop()
 <br>
 
 **Detect a object using IR sensor**
-```arduino
+```cpp
 int ir = 2;
 int led = 13;
 
@@ -67,7 +67,7 @@ void loop()
 ``` 
 
 **Two IR sensor detect object parallely**
-```arduino
+```cpp
 int ir1 = 2;
 int led1 = 13;
 
@@ -107,7 +107,7 @@ void loop()
 <br>
 
 **Major Distance using Ultrasonic with NewPing Library**
-```arduino
+```cpp
 #include <NewPing.h>
 
 int trigger = 12;  
@@ -133,7 +133,7 @@ void loop()
 <br>
 
 **Ultrasonic** 
-```arduino
+```cpp
 #define trigPin 12
 #define echoPin 8
 #define Buzzer 13
@@ -166,7 +166,7 @@ void loop()
 <br>
 
 **Move a servo**
-```arduino
+```cpp
 #include<Servo.h> 
 
 Servo a;
@@ -187,7 +187,7 @@ void loop()
 <br>
 
 **Hello World with Serial Monitor**
-```arduino
+```cpp
 void setup()
 {
   Serial.begin(9600);
@@ -202,7 +202,7 @@ void loop()
 <br>
 
 **Control LED with Serial Monitor**
-```arduino
+```cpp
 int led = 13;
 void setup()
 {
@@ -225,7 +225,7 @@ void loop()
 <br>
 
 **Control Servo motor using Serial Monitor**
-```arduino
+```cpp
 #include<Servo.h> 
 
 Servo a;
