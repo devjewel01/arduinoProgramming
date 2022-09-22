@@ -3,8 +3,8 @@ const int RB = 9;
 const int LF = 10;
 const int LB = 11;
 
-const int enA = 6;
-const int enB = 7;
+const int enA = 3;
+const int enB = 5;
 const int lir = A0;
 const int rir = A1;
 
@@ -50,8 +50,8 @@ void forward()
   digitalWrite(RB, LOW);
   digitalWrite(LF, HIGH);
   digitalWrite(LB, LOW);
-  analogWrite(enA, 130);
-  analogWrite(enB, 130);
+  analogWrite(enA, 100);
+  analogWrite(enB, 100);
 
 }
 void backward()
@@ -60,8 +60,8 @@ void backward()
   digitalWrite(RB, HIGH);
   digitalWrite(LF, LOW);
   digitalWrite(LB, HIGH);
-  analogWrite(enA, 150);
-  analogWrite(enB, 150);
+  analogWrite(enA, 100);
+  analogWrite(enB, 100);
 }
 void right()
 {
@@ -69,8 +69,8 @@ void right()
   digitalWrite(RB, HIGH);
   digitalWrite(LF, HIGH);
   digitalWrite(LB, LOW);
-  analogWrite(enA, 200);
-  analogWrite(enB, 200);
+  analogWrite(enA, 100);
+  analogWrite(enB, 100);
 }
 void left()
 {
@@ -78,8 +78,8 @@ void left()
   digitalWrite(RB, LOW);
   digitalWrite(LF, LOW);
   digitalWrite(LB, HIGH);
-  analogWrite(enA, 200);
-  analogWrite(enB, 200);
+  analogWrite(enA, 100);
+  analogWrite(enB, 100);
 }
 void Stop()
 {
