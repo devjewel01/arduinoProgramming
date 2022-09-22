@@ -1,19 +1,20 @@
 #include <Servo.h>
 #include <NewPing.h>
 
-
 const int LF = 6;
 const int LB = 7;
 const int RF = 5;
 const int RB = 4;
-const int enA = 12;
-const int enB = 13;
+
+const int enA = 10;
+const int enB = 11;
+
+const int servoPin = 9;
 
 #define trig_pin A1
 #define echo_pin A2
-
 #define maximum_distance 200
-boolean goesForward = false;
+
 int distance = 100;
 
 NewPing sonar(trig_pin, echo_pin, maximum_distance);
@@ -29,22 +30,16 @@ void setup()
   pinMode(enA,OUTPUT);
   pinMode(enB,OUTPUT);
 
-  servo_motor.attach(9);
+  servo_motor.attach(servoPin);
   Serial.begin(9600);
 
   servo_motor.write(90);
   delay(2000);
-  distance = readPing();
-  delay(100);
-  distance = readPing();
-  delay(100);
-  distance = readPing();
-  delay(100);
-  distance = readPing();
+  distance = readDistance();
   delay(100);
 
-  analogWrite(enA, 400);
-  analogWrite(enB, 400);
+  analogWrite(enA, 100);
+  analogWrite(enB, 100);
 }
 
 void loop()
@@ -82,17 +77,15 @@ void loop()
   {
     moveForward();
   }
-  distance = readPing();
+  distance = readDistance();
   Serial.println(distance);
-
-
 }
 
 int lookRight()
 {
   servo_motor.write(10);
   delay(500);
-  int distance = readPing();
+  int distance = readDistance();
   delay(500);
   servo_motor.write(90);
   return distance;
@@ -102,14 +95,14 @@ int lookLeft()
 {
   servo_motor.write(170);
   delay(500);
-  int distance = readPing();
+  int distance = readDistance();
   delay(500);
   servo_motor.write(90);
   return distance;
   delay(100);
 }
 
-int readPing()
+int readDistance()
 {
   delay(70);
   int cm = sonar.ping_cm();
@@ -130,22 +123,15 @@ void moveStop()
 
 void moveForward()
 {
-  if (!goesForward)
-  {
-    goesForward = true;
-
     digitalWrite(LF, HIGH);
     digitalWrite(RF, HIGH);
 
     digitalWrite(LB, LOW);
     digitalWrite(RB, LOW);
-  }
 }
 
 void moveBackward()
 {
-  goesForward = false;
-
   digitalWrite(LB, HIGH);
   digitalWrite(RB, HIGH);
 
