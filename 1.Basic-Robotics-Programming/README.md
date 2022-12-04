@@ -283,7 +283,7 @@ void loop()
 
 <br>
 
-Servo Tester
+**Servo Tester**
 ```C++
 #include<Servo.h>
 #include <Wire.h> 
@@ -303,8 +303,10 @@ void setup()
 
   lcd.init();                      
   lcd.backlight();
-  lcd.setCursor(3,0);
-  lcd.print("Servo Position 90 degree");
+  lcd.setCursor(0,0);
+  lcd.print("Quanta Robotics");
+  lcd.setCursor(0,1);
+  lcd.print("Servo angle 90");
 }
 
 void loop() 
@@ -315,10 +317,15 @@ void loop()
   if(deg != pDeg)
   {
     sm.write(deg);
-    lcd.setCursor(3,0);
-    lcd.print("Servo Position ");
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print("Quanta Robotics");
+    
+    lcd.setCursor(0,1);
+    lcd.print("Servo angle ");
     lcd.print(deg);
-    lcd.print(" degree");
+    
   }
+  delay(100);
 }
 ```
